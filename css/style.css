@@ -2,17 +2,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
+html{
+    font-size: 10px;
+}
 body{
     font-family: 'Ubuntu', sans-serif;
     height: 400vh;
 }
 
 header{
-    height: 80vh;
+    height: 100vh;
     /* background-image: url('../assets/img/header.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; */
     background: url('../assets/img/header.jpg') center/cover fixed;
     /* background-attachment: fixed; */
+}
+
+header h1{
+    background-color: aqua;
+    font-size: 5rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
