@@ -7,7 +7,7 @@ html{
 }
 body{
     font-family: 'Ubuntu', sans-serif;
-    height: 400vh;
+    /* height: 400vh; */
 }
 
 
@@ -21,7 +21,8 @@ body{
     height: 6rem;
     z-index: 1;
     background-color: #0042AA;
-    color: #fff;    
+    color: #fff;
+    z-index: 2;   
 }
 a{
     color: inherit; /*dziedziczenie z .top*/
@@ -95,15 +96,82 @@ header h1{
     /* background-color: rgba(0, 0, 0, .5); */
     /* border-radius: .5rem; */
 }
+header a{
+    width: 20rem;
+    height: 5.5rem;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 1.5px solid #fff;
+    border-radius: .4rem;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 5.5rem; /* =height*/
+    /* transition: 0.5s; */
+    z-index: 1;
+}
+/* header a:hover{
+    background: #026873;
+} */
+header a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #026873;
+    border-radius: 0.4rem;
+    transition: 0.5s;
+    z-index:  -1;
+}
+header a:hover::after{
+    height: 100%;
+}
+
+
+section{
+    height: 100vh;
+}
+section h2{
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 8rem;
+}
+/* co druga */
+section:nth-of-type(even){
+    background: lightgray;
+}
 
 @media screen and (min-width: 700px) {
     header h1{
         font-size: 6rem;
     }
+    
 }
 
 @media screen and (min-width: 1024px) {
     header h1{
         font-size: 8rem;
     }
+    .top span{
+        display: none;
+    }
+    nav{
+        position: static;
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-around;
+        flex: 1;
+    }
+    nav a{
+        border-bottom: none;
+    }
+    .logo{
+        flex: 1.2;
+    }
+
 }
